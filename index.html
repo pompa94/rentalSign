@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>렌탈페어 접수하기</title>
+
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./index.css">
+    
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="./index.js"></script>
+
+</head>
+<body>
+    <div id="wrap">
+        <article id="box01">
+            <h2>접수하기</h2>
+            <form action="#" method="post">
+                <fieldset>
+                    <legend class="hide">sign_in</legend>
+                    <ul id="sign">
+                        <li id="name">
+                            <p>이름</p>
+                            <input type="text" id="userName" placeholder="이름을 입력해 주세요." required>
+                        </li>
+                        <li id="birthday">
+                            <p>생년월일</p>
+                            <input type="text" id="yy" placeholder="출생년도(4자)" maxlength="4" required > 년
+                            <select name="month" id="mm" required>
+                                <option value="">월</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select> 월
+                            <select name="day" id="dd" required>
+                                <option value="">일</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="12">13</option>
+                                <option value="12">14</option>
+                                <option value="12">15</option>
+                                <option value="12">16</option>
+                                <option value="12">17</option>
+                                <option value="12">18</option>
+                                <option value="12">19</option>
+                                <option value="12">20</option>
+                                <option value="12">21</option>
+                                <option value="12">22</option>
+                                <option value="12">23</option>
+                                <option value="12">24</option>
+                                <option value="12">25</option>
+                                <option value="12">26</option>
+                                <option value="12">27</option>
+                                <option value="12">28</option>
+                                <option value="12">29</option>
+                                <option value="12">30</option>
+                                <option value="12">31</option>
+                            </select> 일
+                            <!-- <label for="userDate">생년월일</label> -->
+                            <!-- <span class="birthdayY">
+                                <input type="text" id="yy" placeholder="출생년도(4자)" maxlength="4" required >
+                            </span>
+                            <span class="birthdayM">
+                                <select name="month" id="mm" required>
+                                <option value="">월</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                </select> 
+                            </span>
+                            <span class="birthdayD">
+                                <select name="day" id="dd" required>
+                                    <option value="">일</option>
+                                <option value="01">1</option>
+                                <option value="02">2</option>
+                                <option value="03">3</option>
+                                <option value="04">4</option>
+                                <option value="05">5</option>
+                                <option value="06">6</option>
+                                <option value="07">7</option>
+                                <option value="08">8</option>
+                                <option value="09">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="12">13</option>
+                                <option value="12">14</option>
+                                <option value="12">15</option>
+                                <option value="12">16</option>
+                                <option value="12">17</option>
+                                <option value="12">18</option>
+                                <option value="12">19</option>
+                                <option value="12">20</option>
+                                <option value="12">21</option>
+                                <option value="12">22</option>
+                                <option value="12">23</option>
+                                <option value="12">24</option>
+                                <option value="12">25</option>
+                                <option value="12">26</option>
+                                <option value="12">27</option>
+                                <option value="12">28</option>
+                                <option value="12">29</option>
+                                <option value="12">30</option>
+                                <option value="12">31</option>
+                                </select> 
+                            </span> -->
+                        </li>
+                        <li id="gender">
+                            <p>성별</p>
+                            <label for="man">남자</label>
+                            <input type="radio" name="userGender" value="m" id="man" required>
+                            <label for="woman">여자</label>
+                            <input type="radio" name="userGender" value="w" id="woman" required>
+                        </li>
+                        <li id="tel">
+                            <span><label for="userTel">전화번호</label></span>
+                            
+                            <input type="tel" id="userTel" name="userTel" placeholder="전화번호 입력" maxlength="16" required>
+                        </li>
+                        <li>
+                            <p>자동이체 수단(택1)</p>
+                            <label for="bankNo">계좌</label>
+                            <input type="radio" name="bank" value="b" id="bankNo" required>
+                            <label for="CardNo">카드</label>
+                            <input type="radio" name="bank" value="c" id="CardNo" required>
+                            <span>
+                                <p>계좌</p>
+                                <label for="userBankName">은행명</label>
+                                <input type="text" id="userBankName" placeholder="은행명" required>
+                                <label for="userBankNo">계좌번호</label>
+                                <input type="text" id="userBankNo" placeholder="계좌번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+                            </span>
+                            <span>
+                                <p>카드</p>
+                                <label for="userCardName">카드사명</label>
+                                <input type="text" id="userCardName" placeholder="카드사명" required>
+                                <label for="userCardNo">계좌번호</label>
+                                <input type="text" id="userCardNo1" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input type="text" id="userCardNo2" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input type="text" id="userCardNo3" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input type="text" id="userCardNo4" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">
+                                <label for="userCardDateM">월</label> /
+                                <label for="userCardDateY">년</label>
+                                <input type="text" id="userCardDateM" placeholder="MONTH" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"> /
+                                <input type="text" id="userCardDateY" placeholder="YEAR" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2">
+                            </span>
+                        </li>
+                        <li class="form-floating">
+                            <input type="text" id="sample4_postcode" onclick="sample4_execDaumPostcode()" placeholder="우편번호" required>
+                            <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                            <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                            <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                            <span id="guide" style="color:#999;display:none"></span>
+                            <input type="text" id="sample4_detailAddress" placeholder="상세주소" required>
+                            <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                        </li>
+                    </ul>
+                    <input type="submit" value="접수하기">
+                </fieldset>
+            </form>
+        </article>
+        
+    </div>
+
+
+</body>
+
+</html>

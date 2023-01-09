@@ -1,0 +1,118 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hide{
+  width: 0; height: 0;
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+img{
+	max-width: 100%;
+  }
+  
+  html{
+	font: 16px '나눔고딕', sans-serif;
+	color: #222;
+  }
+  
+  
+  #wrap{
+	margin: 0 auto;
+  }
+
+  #box01{
+	margin: 80px auto 0;
+  }
+  #box01 h2{
+	padding: 40px 0;
+	font-size: 32px;
+	font-weight: bold;
+	color: #222;
+	text-align: center;
+  }
+
+  #sign{
+	width: 460px;
+	text-align: center;
+	margin: 0 auto;
+  }
+
+  #sign>li{
+	margin-bottom: 20px;
+  }
+
+  #sign p{
+	width: 100%;
+	text-align: start;
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }
+
+  /* 이름 */
+  #name>input{
+	width: 100%;
+	font-size: 20px;
+	text-indent: 5px;
+	margin-bottom: 10px;
+	padding: 10px 0;
+  }
+
+
+  /* 생년월일 */
+  #birthday{
+	width: 100%;
+	font-size: 20px;
+	text-align: start;
+  }
+
+  #birthday>input{
+	width: 30%;
+	font-size: 20px;
+	text-indent: 5px;
+	margin-bottom: 10px;
+	padding: 10px 0;
+  }
+  #birthday>#mm{
+	width: 15%;
+	font-size: 20px;
+	text-indent: 5px;
+	margin-bottom: 10px;
+	padding: 10px 0;
+  }
+  #birthday>#dd{
+	width: 15%;
+	font-size: 20px;
+	text-indent: 5px;
+	margin-bottom: 10px;
+	padding: 10px 0;
+  }
+
+  /* 성별 */
+
+  #gender{
+	width: 100%;
+	font-size: 20px;
+	text-align: start;
+  }
+  #gender>label{
+  }
+
+
+  /* 전화번호 */
+  #tel{
+	width: 100%;
+	font-size: 20px;
+	text-align: start;
+  }
+  #tel>span{
+	display: block;
+	width: 100%;
+	text-align: start;
+	font-size: 20px;
+	margin-bottom: 10px;
+	font-weight: bold;
+  }
