@@ -1,3 +1,64 @@
+
+$(document).ready(function(){
+		
+    $('#cardNoInfo').hide();   // 초깃값 설정
+		
+	$("input[name='bank']").change(function(){
+		// 무통장입금 결제 선택 시.
+		if($("input[name='bank']:checked").val() == 'b'){
+			$('#cardNoInfo').hide();
+			$('#bankNoInfo').show();
+		}	
+		// 카드 결제 선택 시.
+		else if($("input[name='bank']:checked").val() == 'c'){
+			$('#bankNoInfo').hide();
+			$('#cardNoInfo').show();
+		}
+	});
+		
+});
+
+
+
+// $(function(){
+
+// 	const windowW = $(window).width();
+
+// 	// resize -> reset
+// 	$(window).on('resize',function(e){
+// 		window.location.reload();
+// 	})
+
+// 	if(windowW > 1440){
+// 		bank();
+// 	} 
+// 	else if(windowW < 1440 && windowW > 980){
+// 		bank();
+// 	}
+// 	else if(windowW < 980){
+// 		bank();
+// 	}
+
+
+
+
+// 	// 함수모음
+// 	$("#bank>input[name='bank']").change(function(){
+// 		let test = $("#bank>input[name='bank']:checked").val();
+// 		alert(test);			
+// 	});
+// 	function bank(){
+// 		$('#bank>#bankNo').on('click',function(){
+// 			$('#bank>#bankNoInfo').show();
+// 			$('#bank>#cardNoInfo').hide();
+// 			return false;
+// 		})
+// 	}
+// })
+
+
+
+
 //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
 function sample4_execDaumPostcode() {
 	new daum.Postcode({
@@ -53,3 +114,5 @@ function sample4_execDaumPostcode() {
 		}
 	}).open();
 }
+
+

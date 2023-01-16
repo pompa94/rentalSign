@@ -9,8 +9,13 @@
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./index.css">
     
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="./index.js"></script>
+    <script defer src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
+    <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script defer src="./index.js"></script>
+
+
+
 
 </head>
 <body>
@@ -147,47 +152,58 @@
                             
                             <input type="tel" id="userTel" name="userTel" placeholder="전화번호 입력" maxlength="16" required>
                         </li>
-                        <li>
+                        <li id="bank">
                             <p>자동이체 수단(택1)</p>
-                            <label for="bankNo">계좌</label>
-                            <input type="radio" name="bank" value="b" id="bankNo" required>
+                            <label for="bankNo">계좌번호</label>
+                            <input type="radio" name="bank" value="b" id="bankNo" required checked>
                             <label for="CardNo">카드</label>
                             <input type="radio" name="bank" value="c" id="CardNo" required>
-                            <span>
-                                <p>계좌</p>
-                                <label for="userBankName">은행명</label>
-                                <input type="text" id="userBankName" placeholder="은행명" required>
-                                <label for="userBankNo">계좌번호</label>
-                                <input type="text" id="userBankNo" placeholder="계좌번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+                            <span id="bankNoInfo">
+                                <p>계좌번호</p>
+                                <label class="bankNo-label" for="userBankName">은행명</label>
+                                <input class="bankNo-input" type="text" id="userBankName" placeholder="은행명" required>
+                                <label class="bankNo-label" for="userBankNo">계좌번호</label>
+                                <input class="bankNo-input" type="text" id="userBankNo" placeholder="계좌번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
                             </span>
-                            <span>
+                            <span id="cardNoInfo">
                                 <p>카드</p>
-                                <label for="userCardName">카드사명</label>
-                                <input type="text" id="userCardName" placeholder="카드사명" required>
-                                <label for="userCardNo">계좌번호</label>
-                                <input type="text" id="userCardNo1" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input type="text" id="userCardNo2" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input type="text" id="userCardNo3" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input type="text" id="userCardNo4" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">
-                                <label for="userCardDateM">월</label> /
-                                <label for="userCardDateY">년</label>
-                                <input type="text" id="userCardDateM" placeholder="MONTH" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"> /
-                                <input type="text" id="userCardDateY" placeholder="YEAR" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2">
+                                <label class="cardNo-label" for="userCardName">카드사명</label>
+                                <input class="cardNo-input" type="text" id="userCardName" placeholder="카드사명" required>
+                                <label class="cardNo-label" for="userCardNo">카드번호</label>
+                                <input class="cardNo-input" type="text" id="userCardNo1" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input class="cardNo-input" type="text" id="userCardNo2" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input class="cardNo-input" type="text" id="userCardNo3" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                <input class="cardNo-input" type="text" id="userCardNo4" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">
+                                <label class="cardNo-label" for="userCardDateM">월/년</label>
+                                <!-- <label for="userCardDateY">년</label> -->
+                                <input class="cardNo-input" type="text" id="userCardDateM" placeholder="MONTH" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"> /
+                                <input class="cardNo-input" type="text" id="userCardDateY" placeholder="YEAR" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2">
                             </span>
                         </li>
                         <li class="form-floating">
                             <p>설치주소</p>
-                            <input type="text" id="sample4_postcode" onclick="sample4_execDaumPostcode()" placeholder="우편번호" required>
-                            <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-                            <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                            <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                            <span class="address01">
+                                <input type="text" id="sample4_postcode" onclick="sample4_execDaumPostcode()" placeholder="우편번호" required>
+                                <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기">
+                            </span>
+                            <br>
+                            <span class="address02">
+                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                            </span>
                             <span id="guide" style="color:#999;display:none"></span>
-                            <input type="text" id="sample4_detailAddress" placeholder="상세주소" required>
-                            <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                            <span class="address03">
+                                <input type="text" id="sample4_detailAddress" placeholder="상세주소" required>
+                                <input type="text" id="sample4_extraAddress" placeholder="참고항목">
+                            </span>
                         </li>
+
                     </ul>
-                    <input type="submit" value="접수하기">
+
+                    
+                    
                 </fieldset>
+                <input type="submit" value="접수하기">
             </form>
         </article>
         
