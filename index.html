@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>렌탈페어 접수하기</title>
 
+    <!-- 구글폰트 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+    </style>
+
     <link rel="stylesheet" href="./reset.css">
     <link rel="stylesheet" href="./index.css">
     
@@ -20,19 +25,26 @@
 </head>
 <body>
     <div id="wrap">
+        
+        <div id="header">
+            <header>
+                <img src="./img/mainTop_image.png" alt="상단로고">
+            </header>
+        </div>
+
         <article id="box01">
-            <h2>접수하기</h2>
+            <h2>(주) 페어피플 접수하기</h2>
             <form action="#" method="post">
                 <fieldset>
                     <legend class="hide">sign_in</legend>
                     <ul id="sign">
                         <li id="name">
                             <p>이름</p>
-                            <input type="text" id="userName" placeholder="이름을 입력해 주세요." required>
+                            <input type="text" name="userName" placeholder="이름을 입력해 주세요." required>
                         </li>
                         <li id="birthday">
                             <p>생년월일</p>
-                            <input type="text" id="yy" placeholder="출생년도(4자)" maxlength="4" required > 년
+                            <input type="text" name="yy" placeholder="출생년도(4자)" maxlength="4" required >
                             <select name="month" id="mm" required>
                                 <option value="">월</option>
                                 <option value="01">1</option>
@@ -47,7 +59,7 @@
                                 <option value="10">10</option>
                                 <option value="11">11</option>
                                 <option value="12">12</option>
-                            </select> 월
+                            </select>
                             <select name="day" id="dd" required>
                                 <option value="">일</option>
                                 <option value="01">1</option>
@@ -81,7 +93,7 @@
                                 <option value="12">29</option>
                                 <option value="12">30</option>
                                 <option value="12">31</option>
-                            </select> 일
+                            </select>
                             <!-- <label for="userDate">생년월일</label> -->
                             <!-- <span class="birthdayY">
                                 <input type="text" id="yy" placeholder="출생년도(4자)" maxlength="4" required >
@@ -159,14 +171,14 @@
                             <label for="CardNo">카드</label>
                             <input type="radio" name="bank" value="c" id="CardNo" required>
                             <span id="bankNoInfo">
-                                <p>계좌번호</p>
+                                <!-- <p>계좌번호</p> -->
                                 <label class="bankNo-label" for="userBankName">은행명</label>
                                 <input class="bankNo-input" type="text" id="userBankName" placeholder="은행명" required>
                                 <label class="bankNo-label" for="userBankNo">계좌번호</label>
                                 <input class="bankNo-input" type="text" id="userBankNo" placeholder="계좌번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
                             </span>
                             <span id="cardNoInfo">
-                                <p>카드</p>
+                                <!-- <p>카드</p> -->
                                 <label class="cardNo-label" for="userCardName">카드사명</label>
                                 <input class="cardNo-input" type="text" id="userCardName" placeholder="카드사명" required>
                                 <label class="cardNo-label" for="userCardNo">카드번호</label>
@@ -188,8 +200,8 @@
                             </span>
                             <br>
                             <span class="address02">
-                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소">
-                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+                                <input type="text" id="sample4_roadAddress" placeholder="도로명주소" readonly>
+                                <input type="text" id="sample4_jibunAddress" placeholder="지번주소" readonly>
                             </span>
                             <span id="guide" style="color:#999;display:none"></span>
                             <span class="address03">

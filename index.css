@@ -9,6 +9,10 @@
   visibility: hidden;
 }
 
+
+/* 구글 한글폰트 */
+/* font-family: 'Noto Sans KR', sans-serif; */
+
 img{
 	max-width: 100%;
   }
@@ -17,10 +21,42 @@ img{
 	font: 16px '나눔고딕', sans-serif;
 	color: #222;
   }
+
+  /* 공통 */
+  input{
+	border-radius: 3px;
+	font-family: 'Noto Sans KR', sans-serif;
+	border: solid 1px #dadada;
+	text-indent: 10px;
+  }
+  select{
+	border-radius: 3px;
+	border: solid 1px #dadada;
+  }
+  label{
+	font-family: 'Noto Sans KR', sans-serif;
+  }
   
   
   #wrap{
 	margin: 0 auto;
+  }
+
+  #header{
+	width: 100%;
+	margin: 0 auto;
+	/* background: url(./img/mainTop_image.png) no-repeat center ; */
+	/* background-size: 100%; */
+	/* background-color: red; */
+  }
+
+  #header>header{
+	/* width: 100%;
+	height: 100px;
+	margin: 0 auto; */
+  }
+  #header>header>img{
+	width: 100%;
   }
 
   #box01{
@@ -31,9 +67,11 @@ img{
 	padding: 40px 0;
 	font-size: 40px;
 	font-weight: bold;
-	color: #222;
+	color: #1065a3;
 	width: 100%;
 	text-align: center;
+	font-family: 'Noto Sans KR', sans-serif;
+	text-shadow: 1px 0px 3px #999;
   }
 
   #sign{
@@ -77,25 +115,32 @@ img{
 	/* background-color: green; */
   }
 
+  #birthday{
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   #birthday>input{
 	width: 30%;
 	font-size: 20px;
 	text-indent: 5px;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	padding: 10px 0;
   }
   #birthday>#mm{
-	width: 15%;
+	width: 30%;
 	font-size: 20px;
 	text-indent: 5px;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	padding: 10px 0;
   }
   #birthday>#dd{
-	width: 15%;
+	width: 30%;
 	font-size: 20px;
 	text-indent: 5px;
-	margin-bottom: 10px;
+	/* margin-bottom: 10px; */
 	padding: 10px 0;
   }
 
@@ -105,8 +150,16 @@ img{
 	width: 100%;
 	font-size: 20px;
 	text-align: start;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
   }
   #gender>label{
+  }
+  #gender>input{
+	width: 25px;
+	height: 25px;
+	margin: 0 25px 0 10px;
   }
 
 
@@ -137,6 +190,10 @@ img{
 	font-size: 20px;
 	text-align: start;
   }
+  #bank>p{
+	margin-bottom: 20px;
+  }
+  
   #bank>label{
 	font-size: 20px;
   }
@@ -144,13 +201,16 @@ img{
   #bank>#bankNoInfo{
 	/* background-color: red; */
 	display: block;
-	margin: 20px auto;
+	margin: 40px auto;
+	border-top: 1px solid #dadada;
+	border-bottom: 1px solid #dadada;
+	padding: 30px 0;
   }
   #bankNoInfo>p{
   }
   #bankNoInfo>.bankNo-label{
 	display: block;
-	margin: 10px auto;
+	margin: 0 auto 10px;
   }
   #bankNoInfo>.bankNo-input{
 	display: block;
@@ -158,20 +218,28 @@ img{
 	font-size: 20px;
 	padding: 10px 0;
   }
+  #bankNoInfo>.bankNo-input:nth-child(2){
+	margin-bottom: 30px;
+  }
+
 /* 카드번호 폼 */
   #cardNoInfo{
 	/* background-color: green; */
 	display: block;
 	margin: 20px auto;
+	border-top: 1px solid #dadada;
+	border-bottom: 1px solid #dadada;
+	padding: 30px 0 0;
   }
   #cardNoInfo>.cardNo-label{
 	display: block;
-	margin: 10px auto;
+	margin: 0 auto 10px;
   }
   #cardNoInfo>.cardNo-input{
 	width: 20%;
 	font-size: 20px;
 	padding: 10px 0;
+	margin-bottom: 30px;
   }
 
 /* 설치주소 폼 */
