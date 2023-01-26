@@ -25,15 +25,15 @@
 </head>
 <body>
     <div id="wrap">
-        
+
         <div id="header">
             <header>
-                <img src="./img/mainTop_image.png" alt="상단로고">
+                <h1>(주) 페어피플 접수하기</h1>
             </header>
         </div>
 
         <article id="box01">
-            <h2>(주) 페어피플 접수하기</h2>
+            <!-- <h2>(주) 페어피플 접수하기</h2> -->
             <form action="#" method="post">
                 <fieldset>
                     <legend class="hide">sign_in</legend>
@@ -182,10 +182,13 @@
                                 <label class="cardNo-label" for="userCardName">카드사명</label>
                                 <input class="cardNo-input" type="text" id="userCardName" placeholder="카드사명" required>
                                 <label class="cardNo-label" for="userCardNo">카드번호</label>
-                                <input class="cardNo-input" type="text" id="userCardNo1" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input class="cardNo-input" type="text" id="userCardNo2" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input class="cardNo-input" type="text" id="userCardNo3" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
-                                <input class="cardNo-input" type="text" id="userCardNo4" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">
+                                <span class="cardNumber">
+                                    <input class="cardNo-input" type="text" id="userCardNo1" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                    <input class="cardNo-input" type="text" id="userCardNo2" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                    <input class="cardNo-input" type="text" id="userCardNo3" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">-
+                                    <input class="cardNo-input" type="text" id="userCardNo4" placeholder="카드번호" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="4">
+                                </span>
+                                
                                 <label class="cardNo-label" for="userCardDateM">월/년</label>
                                 <!-- <label for="userCardDateY">년</label> -->
                                 <input class="cardNo-input" type="text" id="userCardDateM" placeholder="MONTH" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="2"> /
@@ -215,10 +218,17 @@
                     
                     
                 </fieldset>
-                <input type="submit" value="접수하기">
+                <input class="submitBtn" type="submit" value="접수하기">
             </form>
         </article>
         
+<!-- ================footer================ -->
+        <footer>
+            <div id="footer_01">
+                <p>(주) 페어피플</p>
+            </div>
+        </footer>
+
     </div>
 
 
